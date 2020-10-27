@@ -20,7 +20,6 @@ import { SchedulerViewDay } from './models';
                         [class.cal-weekend]="day.isWeekend"
                         (mwlClick)="onDayHeaderClick($event, day)">
                         <b>{{ day.date | calendarDate:'weekViewColumnHeader':locale }}</b><br>
-                        <span>{{ day.date | calendarDate:'weekViewColumnSubHeader':locale }}</span>
                     </div>
                 </div>
             </div>

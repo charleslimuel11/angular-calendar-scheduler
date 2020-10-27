@@ -49,8 +49,8 @@ export class AppComponent implements OnInit {
     locale: string = 'en';
     hourSegments: number = 4;
     weekStartsOn: number = 1;
-    startsWithToday: boolean = true;
-    activeDayIsOpen: boolean = true;
+    startsWithToday: boolean = false;
+    activeDayIsOpen: boolean = false;
     excludeDays: number[] = []; // [0];
     dayStartHour: number = 6;
     dayEndHour: number = 22;
@@ -96,9 +96,9 @@ export class AppComponent implements OnInit {
         //     hour.cssClass = this.isDateValid(hour.date) ? '' : 'cal-disabled';
         // }).bind(this);
 
-        this.segmentModifier = ((segment: SchedulerViewHourSegment): void => {
-            segment.isDisabled = !this.isDateValid(segment.date);
-        }).bind(this);
+        // this.segmentModifier = ((segment: SchedulerViewHourSegment): void => {
+        //     segment.isDisabled = !this.isDateValid(segment.date);
+        // }).bind(this);
 
         this.eventModifier = ((event: CalendarSchedulerEvent): void => {
             event.isDisabled = !this.isDateValid(event.start);
